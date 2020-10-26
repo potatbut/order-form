@@ -325,7 +325,8 @@ export default {
     max-width: 900px;
   }
   .inputOrder {
-    max-width: 400px;
+    width: 400px;
+    height: 400px;
   }
   .buttons {
     max-width: 200px;
