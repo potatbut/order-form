@@ -1,9 +1,9 @@
 <template>
   <div class="about">
-    <h1>Лист заказа</h1>
     <div class="orderList"> 
       <div class="barItemList ItemList">
         <h3>Бар</h3>
+        <hr>
         <div class="item" v-for="item in products" :key="item.id">
           <input 
             type="checkbox" 
@@ -16,6 +16,7 @@
       
       <div class="juceItemList ItemList">
         <h3>Сок</h3>
+        <hr>
         <div class="item" v-for="item in juce" :key="item.id">
           <input 
             type="checkbox" 
@@ -28,6 +29,7 @@
 
       <div class="teaItemList ItemList">
         <h3>Чай</h3>
+        <hr>
         <div class="item" v-for="item in tea" :key="item.id">
           <input 
             type="checkbox" 
@@ -40,6 +42,7 @@
 
       <div class="moninItemList ItemList">
         <h3>Сиропы Монин</h3>
+        <hr>
         <div class="item" v-for="item in monin" :key="item.id">
           <input 
             type="checkbox" 
@@ -52,6 +55,7 @@
 
       <div class="syropItemList ItemList">
         <h3>Сиропы</h3>
+        <hr>
         <div class="item" v-for="item in syrop" :key="item.id">
           <input 
             type="checkbox" 
@@ -64,6 +68,7 @@
 
       <div class="kegBeerItemList ItemList">
         <h3>Пиво кега</h3>
+        <hr>
         <div class="item" v-for="item in kegBeer" :key="item.id">
           <input 
             type="checkbox" 
@@ -76,6 +81,7 @@
 
       <div class="kegBeerItemList ItemList">
         <h3>Пиво бутылка</h3>
+        <hr>
         <div class="item" v-for="item in bottleBeer" :key="item.id">
           <input 
             type="checkbox" 
@@ -384,6 +390,12 @@ export default {
           title: 'Джоус',
           for: 'Jaws'
         },
+        {
+          id: 'brewdivision',
+          value: 'Брю Дивижн',
+          title: 'Брю Дивижн',
+          for: 'brewdivision'
+        },
       ],
     }
   },
@@ -393,9 +405,6 @@ export default {
     },
     deleteOrder(){
       this.order = ''
-    },
-    shto(BarGoods){
-      console.log(this.BarGoods.join("\n"))
     },
   }
 }
@@ -409,7 +418,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
-    max-width: 900px;
+    max-width: 450px;
   }
   .inputOrder {
     width: 400px;
