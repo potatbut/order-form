@@ -407,7 +407,7 @@ export default {
     /* display: flex;
     flex-wrap: wrap; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     max-width: 900px;
   }
