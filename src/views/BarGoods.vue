@@ -2,7 +2,7 @@
   <div class="about">
     <div class="orderList"> 
       <div class="barItemList ItemList">
-        <h3>Бар</h3>
+        <h3>Бар:</h3>
         <hr>
         <div class="item" v-for="item in products" :key="item.id">
           <input 
@@ -15,7 +15,7 @@
       </div>
       
       <div class="juceItemList ItemList">
-        <h3>Сок</h3>
+        <h3>Сок:</h3>
         <hr>
         <div class="item" v-for="item in juce" :key="item.id">
           <input 
@@ -28,7 +28,7 @@
       </div>
 
       <div class="teaItemList ItemList">
-        <h3>Чай</h3>
+        <h3>Чай:</h3>
         <hr>
         <div class="item" v-for="item in tea" :key="item.id">
           <input 
@@ -41,7 +41,7 @@
       </div>
 
       <div class="moninItemList ItemList">
-        <h3>Сиропы Монин</h3>
+        <h3>Сиропы Монин:</h3>
         <hr>
         <div class="item" v-for="item in monin" :key="item.id">
           <input 
@@ -54,7 +54,7 @@
       </div>
 
       <div class="syropItemList ItemList">
-        <h3>Сиропы</h3>
+        <h3>Сиропы:</h3>
         <hr>
         <div class="item" v-for="item in syrop" :key="item.id">
           <input 
@@ -67,7 +67,7 @@
       </div>
 
       <div class="kegBeerItemList ItemList">
-        <h3>Пиво кега</h3>
+        <h3>Пиво кега:</h3>
         <hr>
         <div class="item" v-for="item in kegBeer" :key="item.id">
           <input 
@@ -80,9 +80,22 @@
       </div>
 
       <div class="kegBeerItemList ItemList">
-        <h3>Пиво бутылка</h3>
+        <h3>Пиво бутылка:</h3>
         <hr>
         <div class="item" v-for="item in bottleBeer" :key="item.id">
+          <input 
+            type="checkbox" 
+            :id='item.id' 
+            :value='item.value' 
+            v-model="BarGoods">
+          <label :for="item.for">{{item.title}}</label>
+        </div>
+      </div>
+
+      <div class="otherItemList ItemList">
+        <h3>Что-то еще:</h3>
+        <hr>
+        <div class="item" v-for="item in other" :key="item.id">
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -397,6 +410,20 @@ export default {
           for: 'brewdivision'
         },
       ],
+      other: [
+        {
+          id: 'form',
+          value: 'Бланки списания ',
+          title: 'Бланки списания ',
+          for: 'form'
+        },
+        {
+          id: 'Bierdeckel',
+          value: 'Бирдекели',
+          title: 'Бирдекели',
+          for: 'Bierdeckel'
+        },
+      ],
     }
   },
   methods: {
@@ -406,6 +433,9 @@ export default {
     deleteOrder(){
       this.order = ''
     },
+    Checkbox(){
+      this.Checkbox = false
+    },
   }
 }
 </script>
@@ -413,8 +443,6 @@ export default {
 <style>
   .orderList {
     margin: auto;
-    /* display: flex;
-    flex-wrap: wrap; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
