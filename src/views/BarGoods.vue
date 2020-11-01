@@ -513,7 +513,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .orderList {
     margin: auto;
     display: grid;
