@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Главная</router-link> |
       <router-link to="/BarGoods">Бар</router-link> |
-      <router-link to="/HouseholdGoods">Хозтовары</router-link>
+      <router-link to="/HouseholdGoods">Хозтовары</router-link> |
+      <router-link to="/Stationery">Канцтовары</router-link>
     </div>
     <router-view/>
   </div>

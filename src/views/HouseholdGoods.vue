@@ -1,7 +1,24 @@
 <template>
   <div class="about">
     <div class="orderList"> 
-      <div class="barItemList ItemList">
+      
+      <div class="institutionItemList ItemList">
+        <h3>Точка:</h3>
+        <h6>(Выбирать в первую очередь)</h6>
+        <hr>
+        <div class="item" v-for="item in institution" :key="item.id">
+          <input 
+            type="checkbox" 
+            :id='item.id' 
+            :value='item.value' 
+            v-model="BarGoods">
+          <label :for="item.for">{{item.title}}</label>
+        </div>
+      </div>
+
+      <div class="HHGoodsItemList ItemList">
+        <h3>Заказ:</h3>
+        <hr>
         <div class="item" v-for="item in products" :key="item.id">
           <input 
             type="checkbox" 
@@ -38,6 +55,26 @@ export default {
     return {
       BarGoods: [],
       order: '',
+      institution:[
+          {
+            id: 'kuy',
+            value: 'Заказ Куйбышева хозтовары:',
+            title: 'Заказ Куйбышева хозтовары:',
+            for: 'kuy'
+          },
+          {
+            id: 'moh',
+            value: 'Заказ Моховая хозтовары:',
+            title: 'Заказ Моховая хозтовары:',
+            for: 'moh'
+          },
+          {
+            id: 'goroh',
+            value: 'Заказ Гороховая хозтовары:',
+            title: 'Заказ Гороховая хозтовары:',
+            for: 'goroh'
+          },
+      ],
       products: [
           {
             id: 'paperTawels',
@@ -71,14 +108,14 @@ export default {
           },
           {
             id: 'trashBagS',
-            value: 'Мусорные паакеты мал',
-            title: 'Мусорные паакеты мал',
+            value: 'Мусорные пакеты мал',
+            title: 'Мусорные пакеты мал',
             for: 'trashBagS'
           },
           {
             id: 'trashBagL',
-            value: 'Мусорные паакеты бол',
-            title: 'Мусорные паакеты бол',
+            value: 'Мусорные пакеты бол',
+            title: 'Мусорные пакеты бол',
             for: 'trashBagL'
           },
           {
@@ -291,14 +328,7 @@ export default {
 <style>
   .orderList {
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
     max-width: 450px;
-  }
-  .inputOrder {
-    width: 400px;
-    height: 400px;
   }
   .buttons {
     max-width: 450px;

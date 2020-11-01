@@ -19,7 +19,13 @@ const routes = [
     path: '/HouseholdGoods',
     name: 'HouseholdGoods',
     component: () => import('../views/HouseholdGoods.vue')
+  },
+  {
+    path: '/Stationery',
+    name: 'Stationery',
+    component: () => import('../views/Stationery.vue')
   }
+  
 ]
 
 const router = new VueRouter({

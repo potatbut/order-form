@@ -1,6 +1,21 @@
 <template>
   <div class="about">
     <div class="orderList"> 
+      
+      <div class="institutionItemList ItemList">
+        <h3>Точка:</h3>
+        <h6>(Выбирать в первую очередь)</h6>
+        <hr>
+        <div class="item" v-for="item in institution" :key="item.id">
+          <input 
+            type="checkbox" 
+            :id='item.id' 
+            :value='item.value' 
+            v-model="BarGoods">
+          <label :for="item.for">{{item.title}}</label>
+        </div>
+      </div>
+
       <div class="barItemList ItemList">
         <h3>Бар:</h3>
         <hr>
@@ -133,6 +148,26 @@ export default {
     return {
       BarGoods: [],
       order: '',
+      institution:[
+          {
+            id: 'kuy',
+            value: 'Заказ Куйбышева бар:',
+            title: 'Заказ Куйбышева бар:',
+            for: 'kuy'
+          },
+          {
+            id: 'moh',
+            value: 'Заказ Моховая бар:',
+            title: 'Заказ Моховая бар:',
+            for: 'moh'
+          },
+          {
+            id: 'goroh',
+            value: 'Заказ Гороховая бар:',
+            title: 'Заказ Гороховая бар:',
+            for: 'goroh'
+          },
+      ],
       products: [
         {
           id: 'milk',
@@ -445,8 +480,8 @@ export default {
       other: [
         {
           id: 'form',
-          value: 'Бланки списания ',
-          title: 'Бланки списания ',
+          value: 'Бланки списания (кухня + бар)',
+          title: 'Бланки списания (кухня + бар)',
           for: 'form'
         },
         {
@@ -454,6 +489,12 @@ export default {
           value: 'Бирдекели',
           title: 'Бирдекели',
           for: 'Bierdeckel'
+        },
+        {
+          id: 'masks',
+          value: 'Медицинские маски',
+          title: 'Медицинские маски',
+          for: 'masks'
         },
       ],
     }
@@ -479,10 +520,6 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     max-width: 450px;
-  }
-  .inputOrder {
-    width: 400px;
-    height: 400px;
   }
   .buttons {
     max-width: 450px;
