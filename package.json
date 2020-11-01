@@ -8,7 +8,9 @@
     "deploy": "node src/scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "clipboard": "^2.0.6",
     "core-js": "^3.6.5",
+    "v-clipboard": "^2.2.3",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-textarea-autosize": "^1.1.1"

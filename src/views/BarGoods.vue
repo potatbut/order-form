@@ -111,6 +111,7 @@
       <div class="buttons">
         <button @click="deleteOrder()">Удалить заказ</button>
         <button @click="toString()">Создать заказ</button>
+        <button v-clipboard="() => order">Копировать</button>
       </div>
 
       <textarea-autosize
@@ -119,6 +120,7 @@
         :max-height="350"
         @blur.native="onBlurTextarea"
         :value="order"
+        id="orderOutput"
       />
     </div>
   </div>
@@ -409,6 +411,36 @@ export default {
           title: 'Брю Дивижн',
           for: 'brewdivision'
         },
+        {
+          id: 'schneider1',
+          value: 'Шнайдер 1',
+          title: 'Шнайдер 1',
+          for: 'schneider1'
+        },
+        {
+          id: 'schneider3',
+          value: 'Шнайдер 3',
+          title: 'Шнайдер 3',
+          for: 'schneider3'
+        },
+        {
+          id: 'schneider7',
+          value: 'Шнайдер 7',
+          title: 'Шнайдер 7',
+          for: 'schneider7'
+        },
+        {
+          id: 'LK7',
+          value: 'ЛиК 7',
+          title: 'ЛиК 7',
+          for: 'LK7'
+        },
+        {
+          id: 'LK4',
+          value: 'ЛиК 4',
+          title: 'ЛиК 4',
+          for: 'LK4'
+        },
       ],
       other: [
         {
@@ -453,7 +485,7 @@ export default {
     height: 400px;
   }
   .buttons {
-    max-width: 200px;
+    max-width: 450px;
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
