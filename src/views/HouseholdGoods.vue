@@ -17,6 +17,7 @@
       <div class="buttons">
         <button @click="deleteOrder()">Удалить заказ</button>
         <button @click="toString()">Создать заказ</button>
+        <button v-clipboard="() => order">Копировать</button>
       </div>
 
       <textarea-autosize
@@ -116,6 +117,163 @@ export default {
             title: 'Фольга',
             for: 'foil'
           },
+          {
+            id: 'Parchment',
+            value: 'Пергамент ',
+            title: 'Пергамент ',
+            for: 'Parchment'
+          },
+          {
+            id: 'clingFilm',
+            value: 'Пищевая пленка ',
+            title: 'Пищевая пленка ',
+            for: 'clingFilm'
+          },
+          {
+            id: 'floorCleaner',
+            value: 'Моющее для пола',
+            title: 'Моющее для пола',
+            for: 'floorCleaner'
+          },
+          {
+            id: 'dishDetergent',
+            value: 'Моющее для посуды',
+            title: 'Моющее для посуды',
+            for: 'dishDetergent'
+          },
+          {
+            id: 'glassCleaner',
+            value: 'Моющее для стекол',
+            title: 'Моющее для стекол',
+            for: 'glassCleaner'
+          },
+          {
+            id: 'shumanite',
+            value: 'Шуманит ',
+            title: 'Шуманит ',
+            for: 'shumanite'
+          },
+          {
+            id: 'Pemolux',
+            value: 'Пемолюкс ',
+            title: 'Пемолюкс ',
+            for: 'Pemolux'
+          },
+          {
+            id: 'liquidSoap',
+            value: 'Жидкое мыло',
+            title: 'Жидкое мыло',
+            for: 'liquidSoap'
+          },
+          {
+            id: 'sanox',
+            value: 'Санокс ',
+            title: 'Санокс ',
+            for: 'sanox'
+          },
+          {
+            id: 'mole',
+            value: 'Крот ',
+            title: 'Крот ',
+            for: 'mole'
+          },
+          {
+            id: 'white',
+            value: 'Белизна ',
+            title: 'Белизна ',
+            for: 'white'
+          },
+          {
+            id: 'sponges ',
+            value: 'Губки для посуды',
+            title: 'Губки для посуды',
+            for: 'sponges '
+          },
+          {
+            id: 'metallSponges ',
+            value: 'Губки металлические',
+            title: 'Губки металлические',
+            for: 'metallSponges '
+          },
+          {
+            id: 'paperBag',
+            value: 'Пакеты бумажные с собой',
+            title: 'Пакеты бумажные с собой',
+            for: 'paperBag'
+          },
+          {
+            id: 'bottle',
+            value: 'Бутылки 0,5 + крышки',
+            title: 'Бутылки 0,5 + крышки',
+            for: 'bottle'
+          },
+          {
+            id: 'tureens',
+            value: 'Черные супницы + крышки',
+            title: 'Черные супницы + крышки',
+            for: 'tureens'
+          },
+          {
+            id: 'cellophane',
+            value: 'Пакеты целлофановые',
+            title: 'Пакеты целлофановые',
+            for: 'cellophane'
+          },
+          {
+            id: 'washinPowder',
+            value: 'Стиральный порошок',
+            title: 'Стиральный порошок',
+            for: 'washinPowder'
+          },
+          {
+            id: 'fork',
+            value: 'Вилки пластик',
+            title: 'Вилки пластик',
+            for: 'fork'
+          },
+          {
+            id: 'spoon',
+            value: 'Ложки пластик',
+            title: 'Ложки пластик',
+            for: 'spoon'
+          },
+          {
+            id: 'cupL',
+            value: 'Стаканы 0,4 + крышки',
+            title: 'Стаканы 0,4 + крышки',
+            for: 'cupL'
+          },
+          {
+            id: 'cupS',
+            value: 'Стаканы 0,3 + крышки',
+            title: 'Стаканы 0,3 + крышки',
+            for: 'cupS'
+          },
+          {
+            id: 'capholder',
+            value: 'Капхолдеры ',
+            title: 'Капхолдеры ',
+            for: 'capholder'
+          },
+          {
+            id: 'quesadilla',
+            value: 'Кесадильницы ',
+            title: 'Кесадильницы ',
+            for: 'quesadilla'
+          },
+          {
+            id: 'burrito',
+            value: 'Бурритницы ',
+            title: 'Бурритницы ',
+            for: 'burrito'
+          },
+          {
+            id: 'waffleCloth',
+            value: 'Вафельное полотно',
+            title: 'Вафельное полотно',
+            for: 'waffleCloth'
+          },
+
       ],
     }
   },
@@ -143,7 +301,7 @@ export default {
     height: 400px;
   }
   .buttons {
-    max-width: 200px;
+    max-width: 450px;
     margin: 10px auto;
     display: flex;
     justify-content: space-between;

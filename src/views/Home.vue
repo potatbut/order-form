@@ -4,10 +4,12 @@
     <ul>
       <li>Выбери категорию</li>
       <li>Отметь нужные пункты</li>
-      <li>Нажми кнопку создать заказ</li>
-      <li>Беги делать заказ</li>
+      <li>"Создать заказ"</li>
+      <li>"Копировать"</li>
+      <li>Готово! Вы восхитительны.</li>
     </ul>
     <img src="https://emojis.slackmojis.com/emojis/images/1598266360/10254/pepe_naruto.gif" alt="">
+    <p>Передаю привет твоей маме</p>
   </div>
 </template>
 
@@ -21,7 +23,11 @@ export default {
 </script>
 
 <style >
-  ul {
-    list-style: none;
-  }
+ul {
+  text-align: left;
+  width: 250px;
+  margin: auto;
+  margin-bottom: 100px;
+
+}
 </style>
