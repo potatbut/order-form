@@ -25,5 +25,5 @@
 
 ------------
 
-Приложение еще находится в разработке. Результат можно увидеть по [ссылке](https://potatbut.github.io/order-form/#/ "ссылке").
-The app is still under development. The result can be seen at the [link](https://potatbut.github.io/order-form/#/ "link").
+Приложение еще находится в разработке. 
+The app is still under development. 
