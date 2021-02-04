@@ -10,7 +10,7 @@
     </ul>
     <p>В этой версси, пожалуйста, сначала выбирайте точку, а потом заказ! Чмок!</p>
     <img src="https://emojis.slackmojis.com/emojis/images/1598266360/10254/pepe_naruto.gif" alt="">
-    <p>Передаю привет твоей маме</p>
+    <p>Написано с Vue2. Будет перенесено на Vue3 :)</p>
   </div>
 </template>
 
@@ -29,6 +29,8 @@ ul {
   width: 250px;
   margin: auto;
   margin-bottom: 100px;
-
+}
+.ItemList {
+    cursor: pointer;
 }
 </style>

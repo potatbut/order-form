@@ -3,9 +3,8 @@
     <div class="orderList"> 
       
       <div class="institutionItemList ItemList">
-        <h3>Точка:</h3>
+        <h3 @click="visible=!visible"> ▌ Точка</h3>
         <h6>(Выбирать в первую очередь)</h6>
-        <hr>
         <div class="item" v-for="item in institution" :key="item.id">
           <input 
             type="checkbox" 
@@ -17,9 +16,13 @@
       </div>
 
       <div class="barItemList ItemList">
-        <h3>Бар:</h3>
-        <hr>
-        <div class="item" v-for="item in products" :key="item.id">
+        <h3 @click="visibleBar=!visibleBar"> ▌ Бар</h3>
+        <div 
+          v-show="visibleBar" 
+          class="item" 
+          v-for="item in products" 
+          :key="item.id"
+        >
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -30,9 +33,12 @@
       </div>
       
       <div class="juceItemList ItemList">
-        <h3>Сок:</h3>
-        <hr>
-        <div class="item" v-for="item in juce" :key="item.id">
+        <h3 @click="visibleJuce=!visibleJuce"> ▌ Сок</h3>
+        <div 
+          v-show="visibleJuce" 
+          class="item" 
+          v-for="item in juce" 
+          :key="item.id">
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -43,9 +49,13 @@
       </div>
 
       <div class="teaItemList ItemList">
-        <h3>Чай:</h3>
-        <hr>
-        <div class="item" v-for="item in tea" :key="item.id">
+        <h3 @click="visibleTea=!visibleTea"> ▌ Чай</h3>
+        <div 
+          v-show="visibleTea" 
+          class="item" 
+          v-for="item in tea" 
+          :key="item.id"
+        >
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -56,9 +66,13 @@
       </div>
 
       <div class="moninItemList ItemList">
-        <h3>Сиропы Монин:</h3>
-        <hr>
-        <div class="item" v-for="item in monin" :key="item.id">
+        <h3 @click="visibleMonin=!visibleMonin"> ▌ Сиропы Монин</h3>
+        <div 
+          v-show="visibleMonin" 
+          class="item" 
+          v-for="item in monin" 
+          :key="item.id"
+        >
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -69,9 +83,13 @@
       </div>
 
       <div class="syropItemList ItemList">
-        <h3>Сиропы:</h3>
-        <hr>
-        <div class="item" v-for="item in syrop" :key="item.id">
+        <h3 @click="visibleSyrop=!visibleSyrop"> ▌ Сиропы</h3>
+        <div 
+          v-show="visibleSyrop" 
+          class="item" 
+          v-for="item in syrop" 
+          :key="item.id"
+        >
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -82,9 +100,13 @@
       </div>
 
       <div class="kegBeerItemList ItemList">
-        <h3>Пиво кега:</h3>
-        <hr>
-        <div class="item" v-for="item in kegBeer" :key="item.id">
+        <h3 @click="visibleKeg=!visibleKeg"> ▌ Пиво кега</h3>
+        <div 
+          v-show="visibleKeg" 
+          class="item" 
+          v-for="item in kegBeer" 
+          :key="item.id"
+        >
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -94,10 +116,14 @@
         </div>
       </div>
 
-      <div class="kegBeerItemList ItemList">
-        <h3>Пиво бутылка:</h3>
-        <hr>
-        <div class="item" v-for="item in bottleBeer" :key="item.id">
+      <div class="bottleBeerItemList ItemList">
+        <h3 @click="visibleBottle=!visibleBottle"> ▌ Пиво бутылка</h3>
+        <div 
+          v-show="visibleBottle" 
+          class="item" 
+          v-for="item in bottleBeer" 
+          :key="item.id"
+        >
           <input 
             type="checkbox" 
             :id='item.id' 
@@ -108,16 +134,24 @@
       </div>
 
       <div class="otherItemList ItemList">
-        <h3>Что-то еще:</h3>
-        <hr>
-        <div class="item" v-for="item in other" :key="item.id">
-          <input 
-            type="checkbox" 
-            :id='item.id' 
-            :value='item.value' 
-            v-model="BarGoods">
-          <label :for="item.for">{{item.title}}</label>
-        </div>
+        <h3 @click="visibleOther=!visibleOther" > ▌ Что-то еще</h3>
+        <transition-group name="fade">
+          <div 
+            v-show="visibleOther" 
+            class="item" 
+            v-for="item in other" 
+            :key="item.id" 
+          >
+            <input 
+              type="checkbox" 
+              :id='item.id' 
+              :value='item.value' 
+              v-model="BarGoods"
+            >
+            <label :for="item.for">{{item.title}}</label>
+
+          </div>
+        </transition-group>
       </div>
 
     </div>
@@ -133,19 +167,28 @@
         ref="myTextarea"
         :min-height="30"
         :max-height="350"
-        @blur.native="onBlurTextarea"
         :value="order"
         id="orderOutput"
       />
     </div>
   </div>
+  
 </template>
 
 <script>
+/* @blur.native="onBlurTextarea" */
 export default {
   name: 'BarGoods',
   data() {
     return {
+      visibleBar: false,
+      visibleJuce: false,
+      visibleTea: false,
+      visibleMonin: false,
+      visibleSyrop: false,
+      visibleBottle: false,
+      visibleKeg: false,
+      visibleOther: false,
       BarGoods: [],
       order: '',
       institution:[
@@ -248,12 +291,6 @@ export default {
           for: 'cinnamon'
         },
         {
-          id: 'orangeSugar',
-          value: 'Апельсиновый сахар',
-          title: 'Апельсиновый сахар',
-          for: 'orangeSugar'
-        },
-        {
           id: 'vanillaSugar',
           value: 'Ванильный сахар',
           title: 'Ванильный сахар',
@@ -276,6 +313,13 @@ export default {
           value: 'Кокосовая стружка',
           title: 'Кокосовая стружка',
           for: 'coconutFlakes'
+        },
+        
+        {
+          id: 'peanut',
+          value: 'Арахисовая паста',
+          title: 'Арахисовая паста',
+          for: 'peanut'
         },
       ],
       juce: [
@@ -516,8 +560,6 @@ export default {
 <style scoped>
   .orderList {
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     max-width: 450px;
   }
@@ -552,5 +594,11 @@ export default {
     visibility: hidden;
     position: absolute;
     left: -9999px;
+  }
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>

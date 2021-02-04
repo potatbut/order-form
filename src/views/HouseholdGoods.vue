@@ -3,9 +3,8 @@
     <div class="orderList"> 
       
       <div class="institutionItemList ItemList">
-        <h3>Точка:</h3>
+        <h3> ▌ Точка</h3>
         <h6>(Выбирать в первую очередь)</h6>
-        <hr>
         <div class="item" v-for="item in institution" :key="item.id">
           <input 
             type="checkbox" 
@@ -17,8 +16,7 @@
       </div>
 
       <div class="HHGoodsItemList ItemList">
-        <h3>Заказ:</h3>
-        <hr>
+        <h3> ▌ Заказ</h3>
         <div class="item" v-for="item in products" :key="item.id">
           <input 
             type="checkbox" 
@@ -117,6 +115,12 @@ export default {
             value: 'Мусорные пакеты бол',
             title: 'Мусорные пакеты бол',
             for: 'trashBagL'
+          },
+          {
+            id: 'nitrileGloves',
+            value: 'Перчатки Нитриловые',
+            title: 'Перчатки Нитриловые',
+            for: 'nitrileGloves'
           },
           {
             id: 'rubberGloves',
