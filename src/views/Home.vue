@@ -11,6 +11,7 @@
     <p>В этой версси, пожалуйста, сначала выбирайте точку, а потом заказ! Чмок!</p>
     <img src="https://emojis.slackmojis.com/emojis/images/1598266360/10254/pepe_naruto.gif" alt="">
     <p>Написано с Vue2. Будет перенесено на Vue3 :)</p>
+    <p class="comment">Сделано <a href="https://vk.com/tomatobutt">мной</a>. Особая благодарность <a href="https://vk.com/srastet">Эльфу Торговцу</a>.</p>
   </div>
 </template>
 
@@ -31,6 +32,9 @@ ul {
   margin-bottom: 100px;
 }
 .ItemList {
-    cursor: pointer;
+  cursor: pointer;
+}
+.comment {
+  font-size: 10px;
 }
 </style>
