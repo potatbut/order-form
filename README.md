@@ -27,3 +27,5 @@
 
 Приложение еще находится в разработке. 
 The app is still under development. 
+
+[DEMO](https://potatbut.github.io/order-form/#/ "DEMO")
